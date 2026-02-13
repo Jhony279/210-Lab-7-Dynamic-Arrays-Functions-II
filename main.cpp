@@ -11,5 +11,9 @@ void displayArray();
  * @return 
 */
 int main() {
+    string *namesPtr = nullptr;
+    namesPtr = new string[5];
+    namesPtr[0] = "Junio";
+
     return 0;
 }
