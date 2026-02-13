@@ -26,7 +26,7 @@ string* reverseArray(string nameArray[]){
     string *arrayPtr = new string[ARRAY_SIZE];
 
     for (int i = 0; i < ARRAY_SIZE; i++){
-        *(arrayPtr + i) = *(nameArray + (ARRAY_SIZE - i));
+        *(arrayPtr + i) = *(nameArray + (ARRAY_SIZE - i) - 1);
     }
     return arrayPtr;
 }
