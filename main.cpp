@@ -20,7 +20,10 @@ int main() {
 }
 
 string* reverseArray(string nameArray[]){
+    string temp = " ";
     for (int i = 0; i < ARRAY_SIZE; i++){
-        
+        temp = *(nameArray + i);
+        *(nameArray + i) = *(nameArray + (ARRAY_SIZE - i));
+        *(nameArray + (ARRAY_SIZE - i)) = *(nameArray + i)
     }
 }
