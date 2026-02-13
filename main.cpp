@@ -13,9 +13,11 @@ const int ARRAY_SIZE = 5, ARRAY_OFFSET = 1;
  *        displays the reversed array
 */
 int main() {
+    // Create a dynamic array of strings and assign 5 names to it
     string *namesPtr = nullptr;
     namesPtr = new string[ARRAY_SIZE]{"Janet", "Jeffe", "Jin", "Joe", "Junio"};
 
+    // Create a new dynamic array in the reverse of the original array and display it
     string *newNamesPtr = reverseArray(namesPtr);
     displayArray(newNamesPtr);
 
@@ -28,9 +30,11 @@ int main() {
  * @return A pointer to the new array of strings
 */
 string* reverseArray(string nameArray[]){
+    // Create a new dynamic array to assign reversed elements to
     string *arrayPtr = new string[ARRAY_SIZE];
 
     for (int i = 0; i < ARRAY_SIZE; i++){
+        // Reverse array by assigning the elements from original array in reverse order
         *(arrayPtr + i) = *(nameArray + (ARRAY_SIZE - i) - ARRAY_OFFSET);
     }
     return arrayPtr;
@@ -42,8 +46,9 @@ string* reverseArray(string nameArray[]){
 */
 void displayArray(string nameArray[]){
     cout << "Outputting array elements: ";
-    // Loop through array and print out each element
+
     for (int i = 0; i < ARRAY_SIZE; i++){
+        // Loop through array and print out each element
         cout << *(nameArray + i) << " ";
     }
     cout << endl;
