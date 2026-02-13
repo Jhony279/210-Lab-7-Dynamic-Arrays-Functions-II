@@ -4,7 +4,7 @@
 using namespace std;
 
 string* reverseArray(string[]);
-void displayArray();
+void displayArray(string[]);
 
 const int ARRAY_SIZE = 5;
 
@@ -16,14 +16,26 @@ int main() {
     string *namesPtr = nullptr;
     namesPtr = new string[ARRAY_SIZE]{"Janet", "Jeffe", "Jin", "Joe", "Junio"};
 
+    string *newNamesPtr = reverseArray(namesPtr);
+    displayArray(newNamesPtr);
+
     return 0;
 }
 
 string* reverseArray(string nameArray[]){
-    string temp = " ";
+    string *arrayPtr = new string[ARRAY_SIZE];
+
     for (int i = 0; i < ARRAY_SIZE; i++){
-        temp = *(nameArray + i);
-        *(nameArray + i) = *(nameArray + (ARRAY_SIZE - i));
-        *(nameArray + (ARRAY_SIZE - i)) = *(nameArray + i)
+        *(arrayPtr + i) = *(nameArray + (ARRAY_SIZE - i));
     }
+    return arrayPtr;
+}
+
+void displayArray(string nameArray[]){
+    cout << "Outputting array elements: ";
+    // Loop through array and print out each element
+    for (int i = 0; i < ARRAY_SIZE; i++){
+        cout << *(nameArray + i) << " ";
+    }
+    cout << endl;
 }
