@@ -1,9 +1,10 @@
-// COMSC-210 | Lab # | Johnathan Perez Baltazar
+// COMSC-210 | Lab 7 | Johnathan Perez Baltazar
 
 #include <iostream>
 using namespace std;
 
-// Function Prototypes:
+string* reverseArray(string[]);
+void displayArray();
 
 /**
  * @brief - Description of main
@@ -12,8 +13,3 @@ using namespace std;
 int main() {
     return 0;
 }
-
-// Function Definitions:
-
-// Reminder lines must be 80 characters or less, no more than one empty line, no magic numbers,
-// and Reminder to comment code where neccessary.
