@@ -4,7 +4,7 @@
 using namespace std;
 
 string* reverseArray(string[]);
-void displayArray(string[]);
+void displayArray(string[], string[]);
 
 const int ARRAY_SIZE = 5, ARRAY_OFFSET = 1;
 
@@ -19,7 +19,7 @@ int main() {
 
     // Create a new dynamic array in the reverse of the original array and display it
     string *newNamesPtr = reverseArray(namesPtr);
-    displayArray(newNamesPtr);
+    displayArray(newNamesPtr, namesPtr);
 
     return 0;
 }
@@ -44,12 +44,18 @@ string* reverseArray(string nameArray[]){
  * @brief Displays the elements of a string array
  * @param nameArray The array of strings to display
 */
-void displayArray(string nameArray[]){
-    cout << "Outputting array elements: ";
-
+void displayArray(string reversedArray[], string nameArray[]){
+    cout << "Original Array: ";
     for (int i = 0; i < ARRAY_SIZE; i++){
         // Loop through array and print out each element
         cout << *(nameArray + i) << " ";
+    }
+    cout << endl;
+    
+    cout << "Reversed Array: ";
+    for (int i = 0; i < ARRAY_SIZE; i++){
+        // Loop through array and print out each element
+        cout << *(reversedArray + i) << " ";
     }
     cout << endl;
 }
